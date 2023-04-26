@@ -8,8 +8,8 @@ export default function Subscribe () {
             quantity: 1
           }],
           mode: 'subscription',
-          successUrl: 'http://localhost:3000/Home',
-          cancelUrl: 'http://localhost:3000/cancel'
+          successUrl: 'https://oxiforbusiness.netlify.app/',
+          cancelUrl: 'https://oxiforbusiness.netlify.app/'
         })
       }
   

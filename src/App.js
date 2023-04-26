@@ -17,7 +17,7 @@ class App extends Component {
        <Router>
            <div className="App">
            <Routes>
-            {/* <Route exact path='/' element={< Subscribe />}></Route> */}
+            <Route exact path='/' element={< Subscribe />}></Route>
                  <Route exact path='/' element={< Home />}></Route>
                  <Route exact path='/AddProduct' element={< AddProduct />}> </Route>
           </Routes>
@@ -27,4 +27,4 @@ class App extends Component {
   }
 }
   
-export default withAuthenticator(App);
+export default App;
