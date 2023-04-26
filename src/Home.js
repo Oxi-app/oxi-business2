@@ -11,6 +11,7 @@ import { withAuthenticator, Authenticator } from '@aws-amplify/ui-react';
 
 Amplify.configure(awsExports);
 
+
 function App() {
 
   const [outputs, updateOutputs] = useState([{id: 'null', CompanyName: 'null', OutputQuantity: 'null', ProductName: 'null', Sources:'[{"selectedSourceName": "null", "selectedSource": "null", "sourceQuantity": "null", "sourceCarbonFootprint": "0" }]', CarbonPerOutput: 'null' }])
