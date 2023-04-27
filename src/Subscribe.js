@@ -21,8 +21,8 @@ export default function Subscribe() {
         },
       ],
       mode: "subscription",
-      successUrl: "https://oxiforbusiness.netlify.app/Home",
-      cancelUrl: "https://oxiforbusiness.netlify.app/",
+      successUrl: "https://oxiforbusiness.com/Home",
+      cancelUrl: "https://oxiforbusiness.com/",
     });
   };
 
