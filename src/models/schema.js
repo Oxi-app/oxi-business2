@@ -45,6 +45,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "ProductBarcode": {
+                    "name": "ProductBarcode",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -925,5 +932,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.0",
-    "version": "07c58faded1d422f5e22a4259ff83215"
+    "version": "1af39a21142027dd88a0197453ac3fb6"
 };

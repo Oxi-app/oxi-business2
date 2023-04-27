@@ -18,6 +18,7 @@ export declare type OutputCreateFormInputValues = {
     OutputQuantity?: string;
     Sources?: string;
     CarbonPerOutput?: string;
+    ProductBarcode?: string;
 };
 export declare type OutputCreateFormValidationValues = {
     CompanyName?: ValidationFunction<string>;
@@ -25,6 +26,7 @@ export declare type OutputCreateFormValidationValues = {
     OutputQuantity?: ValidationFunction<string>;
     Sources?: ValidationFunction<string>;
     CarbonPerOutput?: ValidationFunction<string>;
+    ProductBarcode?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type OutputCreateFormOverridesProps = {
@@ -34,6 +36,7 @@ export declare type OutputCreateFormOverridesProps = {
     OutputQuantity?: PrimitiveOverrideProps<TextFieldProps>;
     Sources?: PrimitiveOverrideProps<TextFieldProps>;
     CarbonPerOutput?: PrimitiveOverrideProps<TextFieldProps>;
+    ProductBarcode?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type OutputCreateFormProps = React.PropsWithChildren<{
     overrides?: OutputCreateFormOverridesProps | undefined | null;

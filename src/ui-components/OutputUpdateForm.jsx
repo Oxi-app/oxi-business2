@@ -29,6 +29,7 @@ export default function OutputUpdateForm(props) {
     OutputQuantity: "",
     Sources: "",
     CarbonPerOutput: "",
+    ProductBarcode: "",
   };
   const [CompanyName, setCompanyName] = React.useState(
     initialValues.CompanyName
@@ -43,6 +44,9 @@ export default function OutputUpdateForm(props) {
   const [CarbonPerOutput, setCarbonPerOutput] = React.useState(
     initialValues.CarbonPerOutput
   );
+  const [ProductBarcode, setProductBarcode] = React.useState(
+    initialValues.ProductBarcode
+  );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = outputRecord
@@ -53,6 +57,7 @@ export default function OutputUpdateForm(props) {
     setOutputQuantity(cleanValues.OutputQuantity);
     setSources(cleanValues.Sources);
     setCarbonPerOutput(cleanValues.CarbonPerOutput);
+    setProductBarcode(cleanValues.ProductBarcode);
     setErrors({});
   };
   const [outputRecord, setOutputRecord] = React.useState(outputModelProp);
@@ -72,6 +77,7 @@ export default function OutputUpdateForm(props) {
     OutputQuantity: [],
     Sources: [],
     CarbonPerOutput: [],
+    ProductBarcode: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -104,6 +110,7 @@ export default function OutputUpdateForm(props) {
           OutputQuantity,
           Sources,
           CarbonPerOutput,
+          ProductBarcode,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -164,6 +171,7 @@ export default function OutputUpdateForm(props) {
               OutputQuantity,
               Sources,
               CarbonPerOutput,
+              ProductBarcode,
             };
             const result = onChange(modelFields);
             value = result?.CompanyName ?? value;
@@ -192,6 +200,7 @@ export default function OutputUpdateForm(props) {
               OutputQuantity,
               Sources,
               CarbonPerOutput,
+              ProductBarcode,
             };
             const result = onChange(modelFields);
             value = result?.ProductName ?? value;
@@ -220,6 +229,7 @@ export default function OutputUpdateForm(props) {
               OutputQuantity: value,
               Sources,
               CarbonPerOutput,
+              ProductBarcode,
             };
             const result = onChange(modelFields);
             value = result?.OutputQuantity ?? value;
@@ -248,6 +258,7 @@ export default function OutputUpdateForm(props) {
               OutputQuantity,
               Sources: value,
               CarbonPerOutput,
+              ProductBarcode,
             };
             const result = onChange(modelFields);
             value = result?.Sources ?? value;
@@ -276,6 +287,7 @@ export default function OutputUpdateForm(props) {
               OutputQuantity,
               Sources,
               CarbonPerOutput: value,
+              ProductBarcode,
             };
             const result = onChange(modelFields);
             value = result?.CarbonPerOutput ?? value;
@@ -289,6 +301,35 @@ export default function OutputUpdateForm(props) {
         errorMessage={errors.CarbonPerOutput?.errorMessage}
         hasError={errors.CarbonPerOutput?.hasError}
         {...getOverrideProps(overrides, "CarbonPerOutput")}
+      ></TextField>
+      <TextField
+        label="Product barcode"
+        isRequired={false}
+        isReadOnly={false}
+        value={ProductBarcode}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              CompanyName,
+              ProductName,
+              OutputQuantity,
+              Sources,
+              CarbonPerOutput,
+              ProductBarcode: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.ProductBarcode ?? value;
+          }
+          if (errors.ProductBarcode?.hasError) {
+            runValidationTasks("ProductBarcode", value);
+          }
+          setProductBarcode(value);
+        }}
+        onBlur={() => runValidationTasks("ProductBarcode", ProductBarcode)}
+        errorMessage={errors.ProductBarcode?.errorMessage}
+        hasError={errors.ProductBarcode?.hasError}
+        {...getOverrideProps(overrides, "ProductBarcode")}
       ></TextField>
       <Flex
         justifyContent="space-between"

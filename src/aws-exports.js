@@ -8,8 +8,18 @@ const awsmobile = {
     "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
     "aws_cloud_logic_custom": [
         {
+            "name": "api0f26e972",
+            "endpoint": "https://q628p8cx9f.execute-api.eu-west-1.amazonaws.com/staging",
+            "region": "eu-west-1"
+        },
+        {
             "name": "myapi",
             "endpoint": "https://5zun22k0w6.execute-api.eu-west-1.amazonaws.com/staging",
+            "region": "eu-west-1"
+        },
+        {
+            "name": "oxistripe",
+            "endpoint": "https://0qvmszvo42.execute-api.eu-west-1.amazonaws.com/staging",
             "region": "eu-west-1"
         }
     ],

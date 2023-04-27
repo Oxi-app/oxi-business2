@@ -14,7 +14,7 @@ Amplify.configure(awsExports);
 
 function App() {
 
-  const [outputs, updateOutputs] = useState([{id: 'null', CompanyName: 'null', OutputQuantity: 'null', ProductName: 'null', Sources:'[{"selectedSourceName": "null", "selectedSource": "null", "sourceQuantity": "null", "sourceCarbonFootprint": "0" }]', CarbonPerOutput: 'null' }])
+  const [outputs, updateOutputs] = useState([{id: 'null', CompanyName: 'null', OutputQuantity: 'null', ProductName: 'null', ProductBarcode: 'null', Sources:'[{"selectedSourceName": "null", "selectedSource": "null", "sourceQuantity": "null", "sourceCarbonFootprint": "0" }]', CarbonPerOutput: 'null' }])
   const [val,setVal] = useState('')
 
   useEffect(()=>{
@@ -70,7 +70,7 @@ function App() {
     <tr>
       <th>Company Name</th>
       <th>Output Name</th>
-      <th>Unique Identifier</th>
+      <th>Product Barcode</th>
       <th>Carbon Footprint</th>
     </tr>
   </thead>
@@ -79,8 +79,8 @@ function App() {
       <tr key={output.id} className="row" tabIndex="0">
         <td>{output.CompanyName}</td>
         <td>{output.ProductName}</td>
-        <td>{output.id}</td>
-        <td>{output.CarbonPerOutput}</td>
+        <td>{output.ProductBarcode}</td>
+        <td>{parseFloat(output.CarbonPerOutput).toFixed(2)}</td>
       </tr>
     ))}
   </tbody>
@@ -96,4 +96,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

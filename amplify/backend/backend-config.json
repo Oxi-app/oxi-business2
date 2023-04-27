@@ -28,6 +28,20 @@
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
     },
+    "api0f26e972": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "stripe"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "myapi": {
       "dependsOn": [
         {
@@ -61,6 +75,20 @@
           ],
           "category": "function",
           "resourceName": "deletePaymentCard"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "oxistripe": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "oxistripe"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -119,8 +147,28 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "oxistripe": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "OxiReact2"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "serviceProvider": {
       "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "stripe": {
+      "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -190,6 +238,30 @@
         }
       ]
     },
+    "AMPLIFY_function_oxistripe_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "oxistripe"
+        }
+      ]
+    },
+    "AMPLIFY_function_oxistripe_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "oxistripe"
+        }
+      ]
+    },
+    "AMPLIFY_function_oxistripe_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "oxistripe"
+        }
+      ]
+    },
     "AMPLIFY_function_serviceProvider_deploymentBucketName": {
       "usedBy": [
         {
@@ -203,6 +275,30 @@
         {
           "category": "function",
           "resourceName": "serviceProvider"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripe_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripe"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripe_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripe"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripe_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripe"
         }
       ]
     }

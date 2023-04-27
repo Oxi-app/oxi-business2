@@ -53,6 +53,7 @@ type EagerOutput = {
   readonly OutputQuantity?: string | null;
   readonly Sources?: string | null;
   readonly CarbonPerOutput?: string | null;
+  readonly ProductBarcode?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -64,6 +65,7 @@ type LazyOutput = {
   readonly OutputQuantity?: string | null;
   readonly Sources?: string | null;
   readonly CarbonPerOutput?: string | null;
+  readonly ProductBarcode?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

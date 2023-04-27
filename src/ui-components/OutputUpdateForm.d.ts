@@ -19,6 +19,7 @@ export declare type OutputUpdateFormInputValues = {
     OutputQuantity?: string;
     Sources?: string;
     CarbonPerOutput?: string;
+    ProductBarcode?: string;
 };
 export declare type OutputUpdateFormValidationValues = {
     CompanyName?: ValidationFunction<string>;
@@ -26,6 +27,7 @@ export declare type OutputUpdateFormValidationValues = {
     OutputQuantity?: ValidationFunction<string>;
     Sources?: ValidationFunction<string>;
     CarbonPerOutput?: ValidationFunction<string>;
+    ProductBarcode?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type OutputUpdateFormOverridesProps = {
@@ -35,6 +37,7 @@ export declare type OutputUpdateFormOverridesProps = {
     OutputQuantity?: PrimitiveOverrideProps<TextFieldProps>;
     Sources?: PrimitiveOverrideProps<TextFieldProps>;
     CarbonPerOutput?: PrimitiveOverrideProps<TextFieldProps>;
+    ProductBarcode?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type OutputUpdateFormProps = React.PropsWithChildren<{
     overrides?: OutputUpdateFormOverridesProps | undefined | null;

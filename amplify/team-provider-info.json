@@ -32,10 +32,26 @@
         "serviceProvider": {
           "deploymentBucketName": "amplify-oxireact2-staging-145506-deployment",
           "s3Key": "amplify-builds/serviceProvider-464e427a7379674d3542-build.zip"
+        },
+        "stripe": {
+          "secretsPathAmplifyAppId": "d1dupfnb1j9ule",
+          "deploymentBucketName": "amplify-oxireact2-staging-145506-deployment",
+          "s3Key": "amplify-builds/stripe-442b733968792f396b32-build.zip"
+        },
+        "oxistripe": {
+          "secretsPathAmplifyAppId": "d1dupfnb1j9ule",
+          "deploymentBucketName": "amplify-oxireact2-staging-145506-deployment",
+          "s3Key": "amplify-builds/oxistripe-386179502f6c66357430-build.zip"
         }
       },
       "auth": {
         "OxiReact2": {}
+      },
+      "api": {
+        "OxiReact2": {},
+        "myapi": {},
+        "api0f26e972": {},
+        "oxistripe": {}
       }
     }
   }

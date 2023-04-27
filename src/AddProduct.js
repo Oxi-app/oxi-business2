@@ -8,6 +8,7 @@ import Select from 'react-select'
 import { Amplify } from 'aws-amplify';
 import { DataStore } from '@aws-amplify/datastore';
 import { Output, Sources } from './models';
+import { withAuthenticator, Authenticator } from '@aws-amplify/ui-react';
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
 
@@ -16,6 +17,7 @@ function AddProduct (){
     
 const [companyName, updateCompanyName] = useState('')
 const [productName, updateProductName] = useState('')
+const [productBarcode, updateProductBarcode] = useState('')
 const [outputs, updateOutputs] = useState(null)
 const [sourceQuantity, updateSourceQuantity] = useState(null)
 const [selectedSource, setSelectedSource] = useState("");
@@ -23,10 +25,14 @@ const [selectedSourceName, setSelectedSourceName] = useState("");
 const [sources, updateSources] = useState([{selectedSourceName: 'a', selectedSource: 'a', sourceQuantity: 0, sourceCarbonFootprint: 0}]) 
 
 const options = [
-    { value: 5, label: 'Petrol' },
-    { value: 10, label: 'Diesel' },
-    { value: 0, label: 'Solar' },
-    { value: 30, label: 'Coal' }
+    { value: 2.53925, label: 'Natural Gas (kg)' },
+    { value: 1.54, label: 'Propane (litres)' },
+    { value: 2.7, label: 'Diesel (litres)' },
+    { value: 2.16, label: 'Petrol (litres)' },
+    { value: 2.41143, label: 'Coal (kg)' },
+    { value: 0.19338, label: 'Non-Renewable Electricity (kWh)'},
+    { value: 0, label: 'Renewable Electricity (kWh)'}
+    
 ]
 
 const changeCompanyName = event => {
@@ -35,6 +41,10 @@ const changeCompanyName = event => {
 
   const changeProductName = event => {
     updateProductName(event.target.value)
+  }
+
+  const changeProductBarcode = event => {
+    updateProductBarcode(event.target.value)
   }
 
   const changeOutputs = event => {
@@ -57,6 +67,7 @@ const changeCompanyName = event => {
         new Output({
             "CompanyName": companyName,
             "ProductName": productName,
+            "ProductBarcode": productBarcode,
             "OutputQuantity": outputs,
             "Sources": JSON.stringify(sources.slice(1)),
             "CarbonPerOutput": JSON.stringify((sources.reduce((sum, source)=> sum + source.sourceCarbonFootprint,0))/outputs)
@@ -102,13 +113,21 @@ const changeCompanyName = event => {
                 </div>
                 <div className='barcode'>
                      <div className='nameLabel'>
+                        Product Barcode:
+                     </div> 
+                    <div className='barcodeInput'>
+                        <input className='barcodeInputField' onChange={changeProductBarcode} value={productBarcode}></input> 
+                    </div>
+                </div>
+                <div className='barcode'>
+                     <div className='nameLabel'>
                         Number of Products:
                      </div> 
                     <div className='barcodeInput'>
                         <input className='barcodeInputField' onChange={changeOutputs} value={outputs}></input>
                     </div>
                 </div>
-                <div>2) Sources of energy used to produce the product</div>
+                <div>2) Sources of energy used to produce the product (Fuels & Electricity)</div>
                 <div className='barcode'>
                      <div className='nameLabel'>
                         Source:
@@ -124,7 +143,7 @@ const changeCompanyName = event => {
 
                 <div className='barcode'>
                      <div className='nameLabel'>
-                        Quantity:
+                        Quantity (in units provided):
                      </div> 
                     <div className='barcodeInput'>
                         <input className='barcodeInputField' onChange={changeSourceQuantity} value={sourceQuantity}></input>
@@ -185,9 +204,9 @@ const changeCompanyName = event => {
 </div>
 
 <div className='actionBar1'>
-    <Link className="addButton" to="/">Back</Link>
+    <Link className="addButton" to="/Home">Back</Link>
 
-    <Link onClick={()=>{postProduct()}} className='addProductButton' to='/'>Add Product</Link>
+    <Link onClick={()=>{postProduct()}} className='addProductButton' to='/Home'>Add Product</Link>
 </div>
 
 
@@ -211,4 +230,4 @@ const changeCompanyName = event => {
     )
 }
   
-export default AddProduct;
+export default withAuthenticator(AddProduct);

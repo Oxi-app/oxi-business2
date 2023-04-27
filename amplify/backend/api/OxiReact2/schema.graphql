@@ -5,6 +5,7 @@ type Output @model @auth(rules: [{allow: private}]) {
   OutputQuantity: String
   Sources: String
   CarbonPerOutput: String
+  ProductBarcode: String
 }
 
 type Points @model @auth(rules: [{allow: owner}]) {
