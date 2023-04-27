@@ -71,7 +71,7 @@ function App() {
       <th>Company Name</th>
       <th>Output Name</th>
       <th>Product Barcode</th>
-      <th>Carbon Footprint</th>
+      <th>Carbon Footprint (kg)</th>
     </tr>
   </thead>
   <tbody>
