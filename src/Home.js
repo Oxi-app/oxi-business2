@@ -63,6 +63,8 @@ function App() {
         <Link className='addProductButton' to="/AddProduct">Add Output</Link> 
 
       </div>
+
+      <div>Table of Outputs</div>
       
       <div className="productList">
 <table>
