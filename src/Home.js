@@ -60,7 +60,7 @@ function App() {
 
         {/* <Link className='editButton' to="/AddProduct" state={{barcode,name}}>Edit</Link>*/}
 
-        <Link className='addProductButton' to="/AddProduct">Add Product</Link> 
+        <Link className='addProductButton' to="/AddProduct">Add Output</Link> 
 
       </div>
       
@@ -70,7 +70,7 @@ function App() {
     <tr>
       <th>Company Name</th>
       <th>Output Name</th>
-      <th>Product Barcode</th>
+      <th>Barcode</th>
       <th>Added Carbon Footprint (kg)</th>
     </tr>
   </thead>

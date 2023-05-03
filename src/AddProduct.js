@@ -91,7 +91,7 @@ const changeCompanyName = event => {
     
             <div className='addProductPageItems'>
 
-                <div><b>Add a new product by filling out this form:</b></div>
+                <div><b>Add a new output by filling out this form:</b></div>
 
                 <div className='barcode'>
                      <div className='nameLabel'>
@@ -102,10 +102,10 @@ const changeCompanyName = event => {
                     </div>
                 </div>
 
-                <div>1) About the product</div>
+                <div>1) About the output</div>
                 <div className='barcode'>
                      <div className='nameLabel'>
-                        Product Name:
+                        Output Name:
                      </div> 
                     <div className='barcodeInput'>
                         <input className='barcodeInputField' onChange={changeProductName} value={productName}></input> 
@@ -113,7 +113,7 @@ const changeCompanyName = event => {
                 </div>
                 <div className='barcode'>
                      <div className='nameLabel'>
-                        Product Barcode:
+                        Barcode:
                      </div> 
                     <div className='barcodeInput'>
                         <input className='barcodeInputField' onChange={changeProductBarcode} value={productBarcode}></input> 
@@ -121,13 +121,13 @@ const changeCompanyName = event => {
                 </div>
                 <div className='barcode'>
                      <div className='nameLabel'>
-                        Number of Products:
+                        Number of outputs:
                      </div> 
                     <div className='barcodeInput'>
                         <input className='barcodeInputField' onChange={changeOutputs} value={outputs}></input>
                     </div>
                 </div>
-                <div>2) Sources of energy used to produce the product (Fuels & Electricity)</div>
+                <div>2) Sources of energy used to produce the output (Fuels & Electricity)</div>
                 <div className='barcode'>
                      <div className='nameLabel'>
                         Source:
@@ -200,7 +200,7 @@ const changeCompanyName = event => {
 </div>
 
 <div>
-    Carbon Footprint per Product Output: {((sources.reduce((sum, source)=> sum + source.sourceCarbonFootprint,0))/outputs).toFixed(2)}kg 
+    Carbon Footprint per Output: {((sources.reduce((sum, source)=> sum + source.sourceCarbonFootprint,0))/outputs).toFixed(2)}kg 
 </div>
 
 <div className='actionBar1'>
