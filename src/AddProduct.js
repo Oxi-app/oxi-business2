@@ -206,7 +206,7 @@ const changeCompanyName = event => {
 <div className='actionBar1'>
     <Link className="addButton" to="/Home">Back</Link>
 
-    <Link onClick={()=>{postProduct()}} className='addProductButton' to='/Home'>Add Product</Link>
+    <Link onClick={()=>{postProduct()}} className='addProductButton' to='/Home'>Add Output</Link>
 </div>
 
 
