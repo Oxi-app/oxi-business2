@@ -50,6 +50,7 @@ function App() {
     <img src={logo} className='oxiLogo'/>
 
     <div className='pageItems'>
+    <div>Table of Outputs</div>
       <div className='actionBar1'>
         <div className='searchAndRefresh'>
           
@@ -64,7 +65,7 @@ function App() {
 
       </div>
 
-      <div>Table of Outputs</div>
+      
       
       <div className="productList">
 <table>
