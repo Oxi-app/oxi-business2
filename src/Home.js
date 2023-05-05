@@ -45,6 +45,7 @@ function App() {
 
 
   return (
+    <Authenticator hideSignUp={true}>
     <div className="App">
 
     <img src={logo} className='oxiLogo'/>
@@ -96,7 +97,8 @@ function App() {
     </div>
     
   </div>
+  </Authenticator>
   );
 }
 
-export default withAuthenticator(App);
+export default App;

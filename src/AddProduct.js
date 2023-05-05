@@ -85,6 +85,8 @@ const changeCompanyName = event => {
 
     return (
 
+      <Authenticator hideSignUp={true}>
+
         <div className="App">
 
             <img src={logo} className='oxiLogo'/>
@@ -226,8 +228,8 @@ const changeCompanyName = event => {
 
             
 
- 
+            </Authenticator>
     )
 }
   
-export default withAuthenticator(AddProduct);
+export default AddProduct;
