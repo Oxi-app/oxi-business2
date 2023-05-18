@@ -37,11 +37,12 @@ export default function Subscribe() {
         </div>
 
         <div className="cta">
-          <div className="descriptionText">Tap the subscribe button below to sign up for £9.99/month:</div>
+          {/* <div className="descriptionText">Tap the subscribe button below to sign up for £9.99/month:</div>
           <button className="addProductButton" onClick={handleClick}>
             Subscribe
-          </button>
-          <Link to="/Home">Already have an account? Tap here to sign in </Link>
+          </button> */}
+          <div>Send a message to contact@oxi.org.uk to request an account</div>
+          {/* <Link to="/Home">Already have an account? Tap here to sign in </Link> */}
         </div>
 
         <div className="description1">
