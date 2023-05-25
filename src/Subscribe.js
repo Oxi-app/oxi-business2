@@ -42,7 +42,7 @@ export default function Subscribe() {
             Subscribe
           </button> */}
           <div>Send a message to contact@oxi.org.uk to request an account</div>
-          {/* <Link to="/Home">Already have an account? Tap here to sign in </Link> */}
+          <Link to="/Home">Already have an account? Tap here to sign in </Link>
         </div>
 
         <div className="description1">
